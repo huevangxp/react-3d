@@ -5,7 +5,7 @@ import {TextureLoader} from "three";
 
 function App() {
 
-  const texture = useLoader(TextureLoader, "./texture.jpg");
+  const texture = useLoader(TextureLoader, "./earthmap.jpg");
 
   return (
     <>
