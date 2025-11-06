@@ -5,7 +5,7 @@ import {TextureLoader} from "three";
 
 function App() {
 
-  const texture = useLoader(TextureLoader, "./earthmap.jpg");
+  const texture = useLoader(TextureLoader, "./earth.glb");
 
   return (
     <>
