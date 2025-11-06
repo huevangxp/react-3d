@@ -13,7 +13,7 @@ function App() {
 
         <mesh>
         <sphereGeometry args={[2, 64, 64]} />
-          <meshStandardMaterial color="white" />
+        <meshStandardMaterial map={texture} />
         </mesh>
 
         <Stars />
