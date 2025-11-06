@@ -10,6 +10,12 @@ function App() {
         <color attach="background" args={["#000"]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
+
+        <mesh>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="red" />
+        </mesh>
+
         <Stars />
         <OrbitControls />
       </Canvas>
