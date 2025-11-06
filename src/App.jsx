@@ -6,7 +6,7 @@ function App() {
     <>
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas  camera={{ position: [0, 0, 5] , fov: 50 }}   >
-        <color attach="background" args={["#f0f0f0"]} />
+        <color attach="background" args={["#000"]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
       </Canvas>
