@@ -11,7 +11,7 @@ function App() {
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <Stars />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
       </Canvas>
     </div>
     </>
