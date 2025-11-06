@@ -1,7 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls , Stars} from "@react-three/drei";
+import {useLoader} from "@react-three/fiber";
+import {TextureLoader} from "three";
 
 function App() {
+
+  const texture = useLoader(TextureLoader, "./texture.jpg");
 
   return (
     <>
