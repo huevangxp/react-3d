@@ -13,7 +13,7 @@ function App() {
 
         <mesh>
           <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="red" />
+          <meshStandardMaterial color="white" />
         </mesh>
 
         <Stars />
