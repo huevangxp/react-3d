@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
-import { DirectionalLightHelper } from "three";
+// import { DirectionalLightHelper } from "three";
 
 function EarthModel() {
   const { scene } = useGLTF("./earth.glb");
