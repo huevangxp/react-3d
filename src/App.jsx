@@ -17,7 +17,7 @@ function App() {
 
         <mesh>
         <sphereGeometry args={[2, 64, 64]} />
-        <meshStandardMaterial map={texture} />
+        <meshStandardMaterial map={texture} side={DoubleSide} />
         </mesh>
 
         <Stars />
