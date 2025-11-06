@@ -10,6 +10,7 @@ function App() {
         <color attach="background" args={["#000"]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
+        <Stars />
       </Canvas>
     </div>
     </>
