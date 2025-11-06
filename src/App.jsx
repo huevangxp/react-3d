@@ -12,7 +12,7 @@ function App() {
         <pointLight position={[10, 10, 10]} />
 
         <mesh>
-          <boxGeometry args={[1, 1, 10]} />
+        <sphereGeometry args={[2, 64, 64]} />
           <meshStandardMaterial color="white" />
         </mesh>
 
