@@ -38,10 +38,14 @@ const App = () => {
           Submit
         </button>
         </div>
-      <div className="flex flex-col gap-2 mt-2 p-4 border border-gray-300 rounded" >
-        <h1>First Name: {firstName}</h1>
-        <h1>Last Name: {lastName}</h1>
-      </div>
+      {
+        data.map((item, index) => (
+          <div key={index} className="flex flex-col gap-2 mt-2 p-4 border border-gray-300 rounded" >
+            <h1>First Name: {item.firstName}</h1>
+            <h1>Last Name: {item.lastName}</h1>
+          </div>
+        ))
+      }
       </div>
     </div>
   );
