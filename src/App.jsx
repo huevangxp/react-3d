@@ -3,8 +3,14 @@ import Car from './components/Car'
 const App = () => {
   return (
     <div>
-       <h1 class="text-3xl text-red-400 font-bold underline">    Hello world!  </h1>
-       <Car/>
+       <div className="flex">
+        <div>
+          <h1>Car</h1>
+        </div>
+        <div>
+          <Car/>
+        </div>
+       </div>
     </div>
   )
 }
