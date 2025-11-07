@@ -8,11 +8,11 @@ const InteractiveFinancialChart = () => {
       type: "candlestick",
       data: generateInitialData(),
     },
-    {
-      name: "MA (20)",
-      type: "line",
-      data: generateInitialMA(),
-    },
+    // {
+    //   name: "MA (20)",
+    //   type: "line",
+    //   data: generateInitialMA(),
+    // },
     // {
     //   name: "Volume",
     //   type: "column",
