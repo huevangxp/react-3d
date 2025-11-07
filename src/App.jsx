@@ -23,9 +23,7 @@ const App = () => {
   const series = [
     {
       name: "Price",
-      data: [
-
-      ],
+      data: dataMoney,
     },
   ];
 
