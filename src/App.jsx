@@ -10,8 +10,8 @@ const App = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomData = Math.floor(Math.random() * 100);
-      setDataMoney((prevData) => [...prevData, randomData]);
+      const randomData = Math.floor(Math.random() * 1000);
+      setDataMoney((prevData) => [...prevData, [Date.now(), randomData]]);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
