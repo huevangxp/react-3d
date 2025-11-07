@@ -124,9 +124,7 @@ const InteractiveFinancialChart = () => {
 
   return (
     <div >
-      <h2 className="text-lg font-semibold mb-4 text-gray-800">
-        📈 Interactive Financial Chart (Candlestick + MA + Volume)
-      </h2>
+     
       <ReactApexChart options={options} series={series} type="candlestick" height={500} />
     </div>
   );
