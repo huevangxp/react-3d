@@ -3,6 +3,8 @@ import ReactApexChart from "react-apexcharts";
 
 const App = () => {
 
+  const [money, setMoney] = useState(100);
+
   const [dataMoney, setDataMoney] = useState([
     [Date.now(), 100],
   ]);
@@ -20,7 +22,9 @@ const App = () => {
   const series = [
     {
       name: "Price",
-      data: dataMoney,
+      data: [
+
+      ],
     },
   ];
 
