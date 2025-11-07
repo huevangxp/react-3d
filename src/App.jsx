@@ -1,4 +1,4 @@
-import React from 'react'
+import Car from './components/Car'
 
 const App = () => {
   return (
