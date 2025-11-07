@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get("http://lsx.com.la/lo/market/daily-closing-price");
+        const response = await axios.get("https://www.goldapi.io/api/XAU/USD/20230617");
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
