@@ -1,103 +1,164 @@
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 
-const FinancialChart = () => {
+const InteractiveFinancialChart = () => {
   const [series, setSeries] = useState([
     {
       name: "Candlestick",
       type: "candlestick",
-      data: [
-        { x: new Date(2025, 10, 1), y: [120, 130, 115, 128] },
-        { x: new Date(2025, 10, 2), y: [128, 135, 125, 132] },
-        { x: new Date(2025, 10, 3), y: [132, 138, 128, 135] },
-        { x: new Date(2025, 10, 4), y: [135, 142, 130, 140] },
-        { x: new Date(2025, 10, 5), y: [140, 145, 138, 142] },
-      ],
+      data: generateInitialData(),
     },
     {
       name: "MA (20)",
       type: "line",
-      data: [
-        { x: new Date(2025, 10, 1), y: 124 },
-        { x: new Date(2025, 10, 2), y: 129 },
-        { x: new Date(2025, 10, 3), y: 132 },
-        { x: new Date(2025, 10, 4), y: 136 },
-        { x: new Date(2025, 10, 5), y: 140 },
-      ],
+      data: generateInitialMA(),
     },
     {
       name: "Volume",
       type: "column",
-      data: [
-        { x: new Date(2025, 10, 1), y: 5000 },
-        { x: new Date(2025, 10, 2), y: 7000 },
-        { x: new Date(2025, 10, 3), y: 4000 },
-        { x: new Date(2025, 10, 4), y: 6000 },
-        { x: new Date(2025, 10, 5), y: 8000 },
-      ],
+      data: generateInitialVolume(),
     },
   ]);
+
+  // Generate random financial data
+  function generateInitialData() {
+    const data = [];
+    let basePrice = 100;
+    for (let i = 0; i < 30; i++) {
+      const open = basePrice + (Math.random() - 0.5) * 10;
+      const close = open + (Math.random() - 0.5) * 10;
+      const high = Math.max(open, close) + Math.random() * 5;
+      const low = Math.min(open, close) - Math.random() * 5;
+      basePrice = close;
+      data.push({
+        x: new Date(2025, 9, i + 1),
+        y: [open, high, low, close],
+      });
+    }
+    return data;
+  }
+
+  function generateInitialMA() {
+    const data = [];
+    let base = 100;
+    for (let i = 0; i < 30; i++) {
+      base += (Math.random() - 0.5) * 5;
+      data.push({ x: new Date(2025, 9, i + 1), y: base });
+    }
+    return data;
+  }
+
+  function generateInitialVolume() {
+    const data = [];
+    for (let i = 0; i < 30; i++) {
+      data.push({ x: new Date(2025, 9, i + 1), y: Math.floor(Math.random() * 8000) + 2000 });
+    }
+    return data;
+  }
+
+  // Live updates every 1 minute
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeries((prev) => {
+        const newCandle = {
+          x: new Date(),
+          y: [
+            120 + Math.random() * 10,
+            125 + Math.random() * 10,
+            115 + Math.random() * 10,
+            122 + Math.random() * 10,
+          ],
+        };
+
+        const newVolume = { x: new Date(), y: Math.floor(Math.random() * 10000) };
+        const newMA = { x: new Date(), y: 120 + Math.random() * 5 };
+
+        const updated = [...prev];
+        updated[0].data = [...updated[0].data.slice(-29), newCandle]; // candles
+        updated[1].data = [...updated[1].data.slice(-29), newMA]; // MA line
+        updated[2].data = [...updated[2].data.slice(-29), newVolume]; // volume
+        return updated;
+      });
+    }, 60000); // every 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
 
   const options = {
     chart: {
       type: "candlestick",
       height: 500,
-      toolbar: { show: true },
+      toolbar: {
+        show: true,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true,
+        },
+      },
+      zoom: { enabled: true },
+      animations: {
+        enabled: true,
+        easing: "linear",
+        dynamicAnimation: { speed: 1000 },
+      },
     },
     stroke: {
       width: [1, 2, 0],
       curve: "smooth",
     },
-    colors: ["#8b5cf6", "#14b8a6", "#60a5fa"], // purple for MA, teal for candle, blue for volume
+    colors: ["#8b5cf6", "#14b8a6", "#60a5fa"],
     plotOptions: {
       candlestick: {
         colors: {
-          upward: "#22c55e", // green
-          downward: "#ef4444", // red
+          upward: "#22c55e",
+          downward: "#ef4444",
         },
         wick: { useFillColor: true },
       },
-      bar: {
-        columnWidth: "60%",
-      },
+      bar: { columnWidth: "60%" },
     },
     xaxis: {
       type: "datetime",
+      tooltip: { enabled: false },
     },
     yaxis: [
       {
-        tooltip: { enabled: true },
-        labels: { formatter: (val) => `$${val}` },
+        labels: { formatter: (val) => `$${val.toFixed(2)}` },
       },
       {
         opposite: true,
-        max: 10000,
         show: false,
       },
     ],
+    grid: {
+      borderColor: "#e5e7eb",
+      strokeDashArray: 3,
+    },
     tooltip: {
       shared: true,
       theme: "dark",
-      x: { format: "dd MMM" },
-    },
-    grid: {
-      borderColor: "#e5e7eb", // Tailwind gray-200
-      strokeDashArray: 3,
+      x: { format: "dd MMM HH:mm" },
     },
     legend: {
       show: true,
       position: "top",
+      labels: { colors: "#374151" },
     },
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 w-full max-w-5xl mx-auto mt-10">
+    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 w-full max-w-6xl mx-auto mt-10">
       <h2 className="text-lg font-semibold mb-4 text-gray-800">
-        Financial Chart (Candlestick + MA + Volume)
+        📈 Interactive Financial Chart (Candlestick + MA + Volume)
       </h2>
       <ReactApexChart options={options} series={series} type="candlestick" height={500} />
     </div>
   );
 };
 
-export default FinancialChart;
+export default InteractiveFinancialChart;
