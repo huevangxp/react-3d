@@ -4,8 +4,10 @@ const App = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  const [data, setData] = useState([]);
+
   const handleShow = () => {
-    console.log(firstName, lastName);
+    setData([...data, { firstName, lastName }]);
   };
   return (
     <div className="flex justify-center items-center h-screen">
