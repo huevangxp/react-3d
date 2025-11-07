@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
 
     const getData = async () => {
-      const response = await fetch("https://api.ag-grid.com/financial-data");
+      const response = await fetch("http://lsx.com.la/lo/market/daily-closing-price");
       const data = await response.json();
       console.log(data)
       setOptions({ data });
