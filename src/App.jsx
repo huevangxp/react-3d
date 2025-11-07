@@ -145,7 +145,7 @@ const InteractiveFinancialChart = () => {
       x: { format: "dd MMM HH:mm" },
     },
     legend: {
-      show: true,
+      show: false,
       position: "top",
       labels: { colors: "#374151" },
     },
