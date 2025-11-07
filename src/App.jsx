@@ -125,7 +125,7 @@ const InteractiveFinancialChart = () => {
   return (
     <div >
      
-      <ReactApexChart options={options} series={series} type="candlestick" height={100%} />
+      <ReactApexChart options={options} series={series} type="candlestick" height={100} />
     </div>
   );
 };
