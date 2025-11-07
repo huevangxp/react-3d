@@ -21,6 +21,7 @@ function App() {
     const getData = async () => {
       const response = await fetch("https://api.ag-grid.com/financial-data");
       const data = await response.json();
+      console.log(data)
       setOptions({ data });
     };
     getData();
