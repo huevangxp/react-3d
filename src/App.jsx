@@ -89,7 +89,7 @@ const InteractiveFinancialChart = () => {
       type: "candlestick",
       height: 500,
       toolbar: {
-        show: false,
+        show: true,
         tools: {
           download: true,
           selection: true,
