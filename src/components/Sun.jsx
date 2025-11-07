@@ -8,7 +8,7 @@ function Sun() {
   const sunRef = useRef();
   const { scene } = useGLTF("./sun.glb");
   return (
-    <mesh ref={sunRef} position={[3, 3, 0]}>
+    <mesh ref={sunRef} position={[30, 3, 0]}>
       <primitive object={scene} />
     </mesh>
   );
