@@ -17,15 +17,23 @@ function App() {
   ];
 
   useEffect(() => {
-
     const getData = async () => {
-      const response = await fetch("http://lsx.com.la/lo/market/daily-closing-price");
-      const data = await response.json();
-      console.log(data)
-      setOptions({ data });
+      try {
+        const response = await fetch("http://lsx.com.la/lo/market/daily-closing-price", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+        const data = await response.json();
+        console.log(data);
+        setOptions({ data });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
+  
     getData();
-    
   }, []);
 
   const [options, setOptions] = useState({
