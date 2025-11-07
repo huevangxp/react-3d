@@ -15,9 +15,9 @@ const Car = () => {
     <div>
         <Canvas camera={{ position: [0, 0, 5], fov: 20 }}>
 
-            <color attach="background" args={["#fff"]} />
+            <color attach="background" args={["#124"]} />
             <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} color={"#FFF"} />
+            <pointLight position={[10, 10, 10]} color={"#fff"} />
 
             <mesh ref={carRef} onClick={handleCarClick}>
                 <primitive object={scene} scale={2} position={[0, 0, 0]} rotation={[0, 0, 0]} />
