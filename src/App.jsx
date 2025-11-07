@@ -1,7 +1,7 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
-const FinancialChart = () => {
+const App = () => {
   const series = [
     {
       name: "Price",
@@ -50,4 +50,4 @@ const FinancialChart = () => {
   );
 };
 
-export default FinancialChart;
+export default App;
