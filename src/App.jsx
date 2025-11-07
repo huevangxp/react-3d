@@ -128,7 +128,7 @@ const InteractiveFinancialChart = () => {
     },
     yaxis: [
       {
-        labels: { formatter: (val) => `$${val.toFixed(2)}` },
+        // labels: { formatter: (val) => `$${val.toFixed(2)}` },
       },
       {
         opposite: true,
