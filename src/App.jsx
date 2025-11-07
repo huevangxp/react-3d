@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AgFinancialCharts } from "ag-charts-react";
 import "ag-charts-enterprise";
-import getData from "./data";
+import getData from "../public/data";
 
 function App() {
  
