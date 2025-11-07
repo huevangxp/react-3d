@@ -1,14 +1,38 @@
 import React, { useState } from "react";
-import { AgFinancialCharts } from "ag-charts-react";
-import "ag-charts-enterprise";
-import getData from "./public/data";
+import { AgChartsReact } from "ag-charts-react";
+import getData from "./data"; // Make sure this is in src/data.js
 
 function App() {
-  const [options, setOptions] = useState({
+  const [options] = useState({
+    autoSize: true,
+    title: {
+      text: "Financial Chart Example",
+      fontSize: 18,
+    },
     data: getData(),
+    series: [
+      {
+        type: "candlestick",
+        xKey: "date",
+        openKey: "open",
+        highKey: "high",
+        lowKey: "low",
+        closeKey: "close",
+      },
+    ],
+    axes: [
+      {
+        type: "time",
+        position: "bottom",
+      },
+      {
+        type: "number",
+        position: "left",
+      },
+    ],
   });
 
-  return <AgFinancialCharts options={options} />;
+  return <AgChartsReact options={options} />;
 }
 
 export default App;
