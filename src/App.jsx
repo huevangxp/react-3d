@@ -10,6 +10,7 @@ const App = () => {
         placeholder="Enter your name"
         onChange={(e) => setName(e.target.value)}
       />
+      <button>Submit</button>
      </div>
     </div>
   );
