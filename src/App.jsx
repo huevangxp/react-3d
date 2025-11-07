@@ -13,11 +13,11 @@ const InteractiveFinancialChart = () => {
       type: "line",
       data: generateInitialMA(),
     },
-    {
-      name: "Volume",
-      type: "column",
-      data: generateInitialVolume(),
-    },
+    // {
+    //   name: "Volume",
+    //   type: "column",
+    //   data: generateInitialVolume(),
+    // },
   ]);
 
   // Generate random financial data
