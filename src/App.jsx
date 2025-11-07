@@ -21,7 +21,6 @@ function EarthModel() {
 function App() {
   return (
     <div style={{ width: "100vw", height: "100vh",backgroundColor:"black" }}>
-      <h1>Earth Model</h1>
       <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
         {/* Background */}
         <color attach="background" args={["#000"]} />
