@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AgChartsReact } from "ag-charts-react";
-import getData from "./data"; // Make sure this is in src/data.js
+import getData from "../data"; // Make sure this is in src/data.js
 
 function App() {
   const [options] = useState({
