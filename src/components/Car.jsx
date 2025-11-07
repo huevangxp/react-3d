@@ -29,7 +29,7 @@ export default function Car() {
     <div style={{ width: "100vw", height: "100vh", backgroundColor: "#080808" }}>
       <Canvas camera={{ position: [0, 1, 6], fov: 50 }}>
         {/* Background */}
-        <color attach="background" args={["#080808"]} />
+        <color attach="background" args={["#fff"]} />
 
         {/* Lighting */}
         <ambientLight intensity={0.4} />
