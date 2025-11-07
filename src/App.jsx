@@ -6,6 +6,15 @@ const App = () => {
   const [dataMoney, setDataMoney] = useState([]);
 
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomData = Math.floor(Math.random() * 100);
+      setDataMoney((prevData) => [...prevData, randomData]);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+
   const series = [
     {
       name: "Price",
