@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
-import Sun from "./Sun"; // 👈 Import Sun component
+import Sun from "./components/Sun";
 
 function EarthModel() {
   const { scene } = useGLTF("./earth.glb");
