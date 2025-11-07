@@ -1,18 +1,16 @@
-import Car from './components/Car'
+import { useState } from "react";
 
 const App = () => {
+  const [name, setName] = useState("");
   return (
     <div>
-       <div className="flex justify-center items-center w-full ">
-        <div>
-          <h1>Car</h1>
-        </div>
-        <div>
-          <Car/>
-        </div>
-       </div>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        onChange={(e) => setName(e.target.value)}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
