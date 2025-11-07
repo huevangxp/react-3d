@@ -20,7 +20,7 @@ const App = () => {
 
         return newData;
       });
-    }, 60000); // update every 1 minute (60,000 ms)
+    }, 1000); // update every 1 minute (60,000 ms)
 
     return () => clearInterval(interval);
   }, []);
