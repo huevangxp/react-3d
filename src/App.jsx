@@ -140,7 +140,7 @@ const InteractiveFinancialChart = () => {
       strokeDashArray: 3,
     },
     tooltip: {
-      shared: true,
+      shared: false,
       theme: "dark",
       x: { format: "dd MMM HH:mm" },
     },
