@@ -102,7 +102,7 @@ const InteractiveFinancialChart = () => {
       },
       zoom: { enabled: true },
       animations: {
-        enabled: true,
+        enabled: false,
         easing: "linear",
         dynamicAnimation: { speed: 1000 },
       },
