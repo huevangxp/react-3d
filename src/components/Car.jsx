@@ -8,7 +8,7 @@ const Car = () => {
     const carRef = useRef();
 
     const handleCarClick = () => {
-        carRef.current.rotation.x += 0.1;
+        carRef.current.rotation.y += 0.1;
     };
 
   return (
