@@ -29,23 +29,8 @@ const InteractiveFinancialChart = () => {
     return data;
   }
 
-  function generateInitialMA() {
-    const data = [];
-    let base = 100;
-    for (let i = 0; i < 30; i++) {
-      base += (Math.random() - 0.5) * 5;
-      data.push({ x: new Date(2025, 9, i + 1), y: base });
-    }
-    return data;
-  }
-
-  function generateInitialVolume() {
-    const data = [];
-    for (let i = 0; i < 30; i++) {
-      data.push({ x: new Date(2025, 9, i + 1), y: Math.floor(Math.random() * 8000) + 2000 });
-    }
-    return data;
-  }
+  
+  
 
   // Live updates every 1 minute
   useEffect(() => {
