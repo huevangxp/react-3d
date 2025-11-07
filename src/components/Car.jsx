@@ -15,11 +15,11 @@ const Car = () => {
     <div>
         <Canvas>
 
-            <color attach="background" args={["#000"]} />
+            <color attach="background" args={["#fff"]} />
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
 
-            <mesh ref={carRef}>
+            <mesh ref={carRef} onClick={handleCarClick}>
                 <primitive object={scene} />
             </mesh>
 
