@@ -12,7 +12,7 @@ const App = () => {
         onChange={(e) => setName(e.target.value)}
       />
      </div>
-      <button>Submit</button>
+      <button onClick={() => console.log(name)}>Submit</button>
      </div>
     </div>
   );
