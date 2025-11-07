@@ -96,7 +96,7 @@ const InteractiveFinancialChart = () => {
           zoom: true,
           zoomin: true,
           zoomout: true,
-          pan: false,
+          pan: true,
           reset: true,
         },
       },
