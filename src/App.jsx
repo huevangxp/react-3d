@@ -6,7 +6,7 @@ function App() {
 
   const randomData = [
     {
-      date: new Date(2022, 2, 1),
+      date: new Date(2025, 2, 1),
       open: 140.039993,
       high: 140.479996,
       low: 133.580002,
