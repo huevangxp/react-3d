@@ -6,6 +6,13 @@ const App = () => {
 
   const [data, setData] = useState([]);
 
+  useEffect(() => {
+    // random firstname and lastname
+    const firstName = Math.floor(Math.random() * 100);
+    const lastName = Math.floor(Math.random() * 100);
+    setData([...data, { firstName, lastName }]);
+  }, []);
+
   const handleShow = () => {
     setData([...data, { firstName, lastName }]);
     setFirstName("");
