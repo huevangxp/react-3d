@@ -3,7 +3,9 @@ import ReactApexChart from "react-apexcharts";
 
 const App = () => {
 
-  const [dataMoney, setDataMoney] = useState([]);
+  const [dataMoney, setDataMoney] = useState([
+    [Date.now(), 100],
+  ]);
 
 
   useEffect(() => {
