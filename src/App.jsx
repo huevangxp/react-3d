@@ -5,7 +5,16 @@ import getData from "../public/data";
 
 function App() {
   const [options, setOptions] = useState({
-    data: getData(),
+    data: [
+      {
+        date: new Date(2022, 2, 1),
+        open: 140.039993,
+        high: 140.479996,
+        low: 133.580002,
+        close: 136.449997,
+        volume: 36840400,
+      },
+    ],
   });
 
   return (
