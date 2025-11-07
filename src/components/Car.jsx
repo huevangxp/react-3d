@@ -20,7 +20,7 @@ const Car = () => {
             <pointLight position={[10, 10, 10]} color={"#ff0000"} />
 
             <mesh ref={carRef} onClick={handleCarClick}>
-                <primitive object={scene} scale={2} />
+                <primitive object={scene} scale={2} position={[0, 0, 0]} />
             </mesh>
 
             <OrbitControls />
