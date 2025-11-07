@@ -65,7 +65,7 @@ const InteractiveFinancialChart = () => {
         updated[0].data = [...updated[0].data.slice(-29), newVolume]; // volume
         return updated;
       });
-    }, 60000); // every 1 minute
+    }, 1000); // every 1 minute
 
     return () => clearInterval(interval);
   }, []);
