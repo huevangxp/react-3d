@@ -1,76 +1,53 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import ReactApexChart from "react-apexcharts";
 
-const App = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [data, setData] = useState([]);
+const FinancialChart = () => {
+  const series = [
+    {
+      name: "Price",
+      data: [
+        [1730918400000, 120],
+        [1731004800000, 125],
+        [1731091200000, 128],
+        [1731177600000, 127],
+        [1731264000000, 130],
+      ],
+    },
+  ];
 
-  // Generate a random name every 1 minute
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const randomFirstName = "First" + Math.floor(Math.random() * 100);
-      const randomLastName = "Last" + Math.floor(Math.random() * 100);
-      setData((prevData) => [
-        ...prevData,
-        { firstName: randomFirstName, lastName: randomLastName },
-      ]);
-    }, 39999); // every 6 seconds
-
-    // Cleanup interval on unmount
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleShow = () => {
-    if (firstName.trim() === "" && lastName.trim() === "") return;
-    setData((prevData) => [...prevData, { firstName, lastName }]);
-    setFirstName("");
-    setLastName("");
+  const options = {
+    chart: {
+      type: "line",
+      height: 350,
+      toolbar: { show: false },
+    },
+    stroke: {
+      curve: "smooth",
+      width: 2,
+    },
+    xaxis: {
+      type: "datetime",
+    },
+    yaxis: {
+      labels: {
+        formatter: (val) => `$${val}`,
+      },
+    },
+    colors: ["#14b8a6"], // Tailwind teal-500
+    tooltip: {
+      theme: "dark",
+      x: { format: "dd MMM" },
+    },
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col gap-2 w-full max-w-md">
-        <div className="flex flex-col gap-2 p-4 border border-gray-300 rounded">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            id="firstName"
-            type="text"
-            placeholder="Enter your first name"
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstName}
-            className="border border-gray-300 rounded p-2"
-          />
-
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            id="lastName"
-            type="text"
-            placeholder="Enter your last name"
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
-            className="border border-gray-300 rounded p-2"
-          />
-
-          <button
-            onClick={handleShow}
-            className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-          >
-            Submit
-          </button>
-        </div>
-
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col gap-2 mt-2 p-4 border border-gray-300 rounded"
-          >
-            <h1>First Name: {item.firstName}</h1>
-            <h1>Last Name: {item.lastName}</h1>
-          </div>
-        ))}
-      </div>
+    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200">
+      <h2 className="text-lg font-semibold mb-2 text-gray-800">
+        Financial Line Chart
+      </h2>
+      <ReactApexChart options={options} series={series} type="line" height={300} />
     </div>
   );
 };
 
-export default App;
+export default FinancialChart;
