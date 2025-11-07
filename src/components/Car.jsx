@@ -2,44 +2,46 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 
-function CarModel() {
+function SunModel() {
   const { scene } = useGLTF("./sun.glb");
-  const carRef = useRef();
+  const sunRef = useRef();
 
-  const handleCarClick = () => {
-    if (carRef.current) {
-      carRef.current.rotation.y += 0.2; // Rotate slightly on click
+  const handleClick = () => {
+    if (sunRef.current) {
+      sunRef.current.rotation.y += 0.2;
     }
   };
 
   return (
     <primitive
-      ref={carRef}
+      ref={sunRef}
       object={scene}
-      scale={199}
-      position={[0, 0, 0]}
+      scale={2} // reasonable scale
+      position={[0, 0, 0]} // center it
       rotation={[0, 0, 0]}
-      onClick={handleCarClick}
+      onClick={handleClick}
     />
   );
 }
 
-export default function Car() {
+export default function Sun() {
   return (
-    <div style={{ width: "50vw", height: "50vh", backgroundColor: "#080808" }}>
-      <Canvas camera={{ position: [1, 1, 1], fov: 600 }}>
+    <div style={{ width: "100vw", height: "100vh", backgroundColor: "#000" }}>
+      <Canvas
+        camera={{ position: [0, 0, 8], fov: 45 }} // move camera back and use normal fov
+      >
         {/* Background */}
         <color attach="background" args={["#000"]} />
 
         {/* Lighting */}
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} color={"#ffffff"} />
 
-        {/* Car Model */}
-        <CarModel />
+        {/* Sun Model */}
+        <SunModel />
 
         {/* Controls */}
         <OrbitControls enablePan={false} enableZoom={true} />
-
       </Canvas>
     </div>
   );
