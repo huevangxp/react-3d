@@ -10,6 +10,8 @@ const App = () => {
         type="text"
         placeholder="Enter your name"
         onChange={(e) => setName(e.target.value)}
+        value={name}
+        className="border border-gray-300 rounded p-2"
       />
      </div>
       <button onClick={() => console.log(name)}>Submit</button>
