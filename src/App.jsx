@@ -59,7 +59,7 @@ return updated;
     const updated = [...prev.slice(-29), newVol]; // keep last 29 + new
     return updated;
   });
-}, 2000); // every 2 seconds
+}, 6000); // every 2 seconds
 
 return () => clearInterval(interval);
 
