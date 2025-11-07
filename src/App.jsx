@@ -4,7 +4,7 @@ const App = () => {
   const [name, setName] = useState("");
   return (
     <div className="flex justify-center items-center h-screen">
-     <div className="flex gap-2">
+     <div className="flex flex-col gap-2">
      <div >
      <input
         type="text"
