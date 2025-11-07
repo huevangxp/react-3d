@@ -7,6 +7,10 @@ const Car = () => {
     const { scene } = useGLTF("./car.glb");
     const carRef = useRef();
 
+    const handleCarClick = () => {
+        carRef.current.rotation.x += 0.1;
+    };
+
   return (
     <div>
         <Canvas>
@@ -18,6 +22,8 @@ const Car = () => {
             <mesh ref={carRef}>
                 <primitive object={scene} />
             </mesh>
+
+            <OrbitControls />
 
         </Canvas>
     </div>
