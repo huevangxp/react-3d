@@ -4,7 +4,7 @@ const App = () => {
   const [name, setName] = useState("");
   return (
     <div className="flex justify-center items-center h-screen">
-     <div>
+     <div className="flex gap-2">
      <input
         type="text"
         placeholder="Enter your name"
