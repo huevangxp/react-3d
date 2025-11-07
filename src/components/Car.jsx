@@ -3,7 +3,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 
 function CarModel() {
-  const { scene } = useGLTF("./car.glb");
+  const { scene } = useGLTF("./earth.glb");
   const carRef = useRef();
 
   const handleCarClick = () => {
