@@ -14,7 +14,7 @@ const App = () => {
         ...prevData,
         { firstName: randomFirstName, lastName: randomLastName },
       ]);
-    }, 6000); // every 60 seconds
+    }, 6000); // every 6 seconds
 
     // Cleanup interval on unmount
     return () => clearInterval(interval);
