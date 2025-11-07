@@ -29,7 +29,14 @@ const InteractiveFinancialChart = () => {
     return data;
   }
 
-  
+  function generateInitialVolume() {
+    const data = [];
+    for (let i = 0; i < 30; i++) {
+      data.push({ x: new Date(2025, 9, i + 1), y: Math.floor(Math.random() * 8000) + 2000 });
+    }
+    return data;
+  }
+
   
 
   // Live updates every 1 minute
