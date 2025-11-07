@@ -11,7 +11,7 @@ const App = () => {
     const firstName = Math.floor(Math.random() * 100);
     const lastName = Math.floor(Math.random() * 100);
     setData([...data, { firstName, lastName }]);
-  }, [data]);
+  }, [100]);
 
   const handleShow = () => {
     setData([...data, { firstName, lastName }]);
