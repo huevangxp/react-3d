@@ -14,7 +14,7 @@ const App = () => {
         className="border border-gray-300 rounded p-2"
       />
      </div>
-      <button onClick={() => console.log(name)}>Submit</button>
+      <button onClick={() => console.log(name)} className="bg-blue-500 text-white p-2 rounded">Submit</button>
      </div>
     </div>
   );
