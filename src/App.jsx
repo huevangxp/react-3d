@@ -46,13 +46,8 @@ const InteractiveFinancialChart = () => {
           ],
         };
 
-        const newVolume = { x: new Date(), y: Math.floor(Math.random() * 10000) };
-        const newMA = { x: new Date(), y: 120 + Math.random() * 5 };
-
         const updated = [...prev];
         updated[0].data = [...updated[0].data.slice(-29), newCandle]; // candles
-        updated[1].data = [...updated[1].data.slice(-29), newMA]; // MA line
-        // updated[2].data = [...updated[2].data.slice(-29), newVolume]; // volume
         return updated;
       });
     }, 60000); // every 1 minute
