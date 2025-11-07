@@ -20,7 +20,7 @@ function SunModel() {
       position={[0, 0, 0]} // center it
       rotation={[0, 0, 0]}
       onClick={handleClick}
-    />
+    /> 
   );
 }
 
