@@ -34,9 +34,9 @@ const App = () => {
         >
           Submit
         </button>
-      </div>
       <div >
         {firstName} {lastName}
+      </div>
       </div>
     </div>
   );
