@@ -16,7 +16,7 @@ function CarModel() {
     <primitive
       ref={carRef}
       object={scene}
-      scale={2}
+      scale={199}
       position={[0, 0, 0]}
       rotation={[0, 0, 0]}
       onClick={handleCarClick}
