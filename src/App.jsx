@@ -89,14 +89,14 @@ const InteractiveFinancialChart = () => {
       type: "candlestick",
       height: 500,
       toolbar: {
-        show: true,
+        show: false,
         tools: {
           download: true,
           selection: true,
           zoom: true,
           zoomin: true,
           zoomout: true,
-          pan: true,
+          pan: false,
           reset: true,
         },
       },
