@@ -17,7 +17,7 @@ const Car = () => {
 
             <color attach="background" args={["#fff"]} />
             <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} color={"#ff0000"} />
+            <pointLight position={[10, 10, 10]} color={"#FFF"} />
 
             <mesh ref={carRef} onClick={handleCarClick}>
                 <primitive object={scene} scale={2} position={[0, 0, 0]} rotation={[0, 0, 0]} />
