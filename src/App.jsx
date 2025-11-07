@@ -8,6 +8,6 @@ function App() {
   });
 
   return <AgFinancialCharts options={options} />;
-};
+}
 
 export default App;
