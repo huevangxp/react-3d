@@ -15,7 +15,7 @@ const Car = () => {
     <div>
         <Canvas camera={{ position: [0, 0, 5], fov: 20 }}>
 
-            <color attach="background" args={["#124"]} />
+            <color attach="background" args={["#080808"]} />
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} color={"#fff"} />
 
