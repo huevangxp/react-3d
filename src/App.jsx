@@ -43,7 +43,7 @@ function App() {
         <EarthModel />
 
         {/* Background stars */}
-        <Stars radius={100} depth={500} count={5000} factor={4} fade />
+        <Stars radius={100} depth={50} count={5000} factor={4} fade />
 
         {/* Orbit controls to rotate camera */}
         <OrbitControls enablePan={false} enableZoom={true} />
