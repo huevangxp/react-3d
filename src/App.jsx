@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="flex justify-center items-center h-screen">
      <div className="flex gap-2">
-     <div>
+     <div >
      <input
         type="text"
         placeholder="Enter your name"
