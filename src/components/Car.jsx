@@ -13,7 +13,7 @@ const Car = () => {
 
   return (
     <div>
-        <Canvas>
+        <Canvas camera={{ position: [0, 0, 5], fov: 20 }}>
 
             <color attach="background" args={["#fff"]} />
             <ambientLight intensity={0.5} />
