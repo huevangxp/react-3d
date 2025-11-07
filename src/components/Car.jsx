@@ -1,33 +1,48 @@
-import { Canvas } from '@react-three/fiber'
-import {OrbitControls, useGLTF } from '@react-three/drei'
-import { useRef } from 'react'
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useRef } from "react";
 
-const Car = () => {
+function CarModel() {
+  const { scene } = useGLTF("./car.glb");
+  const carRef = useRef();
 
-    const { scene } = useGLTF("./car.glb");
-    const carRef = useRef();
-
-    const handleCarClick = () => {
-        carRef.current.rotation.y += 0.1;
-    };
+  const handleCarClick = () => {
+    if (carRef.current) {
+      carRef.current.rotation.y += 0.2; // Rotate slightly on click
+    }
+  };
 
   return (
-    <div>
-        <Canvas camera={{ position: [0, 0, 5], fov: 20 }}>
-
-            <color attach="background" args={["#080808"]} />
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} color={"#fff"} />
-
-            <mesh ref={carRef} onClick={handleCarClick}>
-                <primitive object={scene} scale={2} position={[0, 0, 0]} rotation={[0, 0, 0]} />
-            </mesh>
-
-            <OrbitControls />
-
-        </Canvas>
-    </div>
-  )
+    <primitive
+      ref={carRef}
+      object={scene}
+      scale={2}
+      position={[0, -1, 0]}
+      rotation={[0, 0, 0]}
+      onClick={handleCarClick}
+    />
+  );
 }
 
-export default Car
+export default function Car() {
+  return (
+    <div style={{ width: "100vw", height: "100vh", backgroundColor: "#080808" }}>
+      <Canvas camera={{ position: [0, 1, 6], fov: 50 }}>
+        {/* Background */}
+        <color attach="background" args={["#080808"]} />
+
+        {/* Lighting */}
+        <ambientLight intensity={0.4} />
+        <directionalLight position={[5, 5, 5]} intensity={1.2} castShadow />
+        <pointLight position={[-5, 3, -5]} intensity={0.6} color="#66ccff" />
+
+        {/* Car Model */}
+        <CarModel />
+
+        {/* Controls */}
+        <OrbitControls enablePan={false} enableZoom={true} />
+
+      </Canvas>
+    </div>
+  );
+}
