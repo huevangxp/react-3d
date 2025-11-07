@@ -2,16 +2,19 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 const App = () => {
+
+  const dataMoney = [
+    [1730918400000, 120],
+    [1731004800000, 125],
+    [1731091200000, 128],
+    [1731177600000, 127],
+    [1731264000000, 130],
+  ];
+
   const series = [
     {
       name: "Price",
-      data: [
-        [1730918400000, 120],
-        [1731004800000, 125],
-        [1731091200000, 128],
-        [1731177600000, 127],
-        [1731264000000, 130],
-      ],
+      data: dataMoney,
     },
   ];
 
