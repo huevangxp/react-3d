@@ -131,7 +131,7 @@ const InteractiveFinancialChart = () => {
         labels: { formatter: (val) => `$${val.toFixed(2)}` },
       },
       {
-        opposite: true,
+        opposite: false,
         show: false,
       },
     ],
