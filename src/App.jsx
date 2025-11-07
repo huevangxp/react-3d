@@ -22,7 +22,6 @@ function App() {
       try {
         const response = await axios.get("http://lsx.com.la/lo/market/daily-closing-price");
         console.log(response.data);
-        setOptions({ data });
       } catch (error) {
         console.error("Error fetching data:", error);
       }
