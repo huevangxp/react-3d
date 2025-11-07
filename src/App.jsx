@@ -123,7 +123,7 @@ const InteractiveFinancialChart = () => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 w-full max-w-6xl mx-auto ">
+    <div >
       <h2 className="text-lg font-semibold mb-4 text-gray-800">
         📈 Interactive Financial Chart (Candlestick + MA + Volume)
       </h2>
