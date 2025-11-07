@@ -9,6 +9,7 @@ const App = () => {
   };
   return (
     <div className="flex justify-center items-center h-screen">
+      <div> 
       <div className="flex flex-col gap-2 p-4 border border-gray-300 rounded">
         <label htmlFor="name">First Name</label>
         <input
@@ -34,6 +35,7 @@ const App = () => {
         >
           Submit
         </button>
+        </div>
       <div >
         {firstName} {lastName}
       </div>
