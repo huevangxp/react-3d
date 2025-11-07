@@ -37,6 +37,8 @@ const InteractiveFinancialChart = () => {
     return data;
   }
 
+  const [volume, setVolume] = useState(generateInitialVolume());
+
   
 
   // Live updates every 1 minute
@@ -55,6 +57,12 @@ const InteractiveFinancialChart = () => {
 
         const updated = [...prev];
         updated[0].data = [...updated[0].data.slice(-29), newCandle]; // candles
+        return updated;
+      });
+      setVolume((prev) => {
+        const newVolume = { x: new Date(), y: Math.floor(Math.random() * 8000) + 2000 };
+        const updated = [...prev];
+        updated[0].data = [...updated[0].data.slice(-29), newVolume]; // volume
         return updated;
       });
     }, 60000); // every 1 minute
