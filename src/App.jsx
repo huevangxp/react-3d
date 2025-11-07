@@ -4,9 +4,10 @@ import ReactApexChart from "react-apexcharts";
 const App = () => {
 
   const [money, setMoney] = useState(100);
+  const [time, setTime] = useState(1730918400000);
 
   const [dataMoney, setDataMoney] = useState([
-    [Date.now(), 100],
+    [time, money],
   ]);
 
 
