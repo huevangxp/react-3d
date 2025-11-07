@@ -3,7 +3,7 @@ import Car from './components/Car'
 const App = () => {
   return (
     <div>
-       <div className="flex">
+       <div className="flex justify-center items-center">
         <div>
           <h1>Car</h1>
         </div>
