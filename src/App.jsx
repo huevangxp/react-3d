@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="flex justify-center items-center h-screen">
      <div className="flex flex-col gap-2 p-4 border border-gray-300 rounded">
-     <div >
+     <div className="flex gap-2" >
       <label htmlFor="name">Name</label>
      <input
         type="text"
