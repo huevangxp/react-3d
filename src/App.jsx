@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AgFinancialCharts } from "ag-charts-react";
 import "ag-charts-enterprise";
 
 function App() {
+  
 
   const randomData = [
     {
@@ -14,6 +15,17 @@ function App() {
       volume: 36840400,
     },
   ];
+
+  useEffect(() => {
+
+    const getData = async () => {
+      const response = await fetch("https://api.ag-grid.com/financial-data");
+      const data = await response.json();
+      setOptions({ data });
+    };
+    getData();
+    
+  }, []);
 
   const [options, setOptions] = useState({
     data: randomData,
