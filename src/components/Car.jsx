@@ -27,7 +27,7 @@ function CarModel() {
 export default function Car() {
   return (
     <div style={{ width: "50vw", height: "50vh", backgroundColor: "#080808" }}>
-      <Canvas camera={{ position: [0, 1, 6], fov: 50 }}>
+      <Canvas camera={{ position: [0, 1, 6], fov: 10 }}>
         {/* Background */}
         <color attach="background" args={["#000"]} />
 
