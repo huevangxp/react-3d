@@ -9,13 +9,15 @@ const App = () => {
       <div>
       <label htmlFor="name">Name</label>
       </div>
-     <input
+ <div>
+ <input
         type="text"
         placeholder="Enter your name"
         onChange={(e) => setName(e.target.value)}
         value={name}
         className="border border-gray-300 rounded p-2"
       />
+ </div>
      </div>
       <button onClick={() => console.log(name)} className="bg-blue-500 text-white p-2 rounded">Submit</button>
      </div>
