@@ -8,7 +8,7 @@ const Header = () => {
                <h1 className='text-2xl font-bold'>AG Charts</h1>
             </div>
            <div>
-           <ul className="flex gap-5">
+           <ul className="flex gap-5 font-semibold">
                 <li>Home</li>
                 <li>Products</li>
                 <li>Services</li>
