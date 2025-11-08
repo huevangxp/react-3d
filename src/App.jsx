@@ -9,6 +9,7 @@ function App() {
 
   const [options, setOptions] = useState({
     data: getData(),
+    theme: darkMode ? "ag-theme-dark" : "ag-theme-default",
   });
 
   return (
