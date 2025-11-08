@@ -4,6 +4,9 @@ const Header = () => {
   return (
     <div>
         <nav>
+            <div>
+               <h1>AG Charts</h1>
+            </div>
             <ul>
                 <li>Home</li>
                 <li>Products</li>
