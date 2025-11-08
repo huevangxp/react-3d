@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AgFinancialCharts } from "ag-charts-react";
 import "ag-charts-enterprise";
 import getData from "../public/data";
-
+import Header from "./components/Header";
 function App() {
 
   
@@ -12,7 +12,8 @@ function App() {
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <AgFinancialCharts options={options} />
+      <Header />
+      <AgFinancialCharts options={options} onOptionsChange={setOptions} />
     </div>
   );
 }
