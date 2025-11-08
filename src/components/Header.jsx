@@ -5,7 +5,7 @@ const Header = () => {
     <div>
         <nav className="navbar flex justify-between p-6 bg-black text-white ">
             <div className="logo">
-               <h1>AG Charts</h1>
+               <h1 className='text-2xl font-bold'>AG Charts</h1>
             </div>
            <div>
            <ul className="flex gap-5">
