@@ -15,7 +15,7 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "100vh", backgroundColor: darkMode ? "#000" : "#fff" }}>
       <button onClick={() => setDarkMode(!darkMode)}>Toggle Dark Mode</button>
-      <AgFinancialCharts options={options} />
+      <AgFinancialCharts options={options} onOptionsChange={setOptions} />
     </div>
   );
 }
