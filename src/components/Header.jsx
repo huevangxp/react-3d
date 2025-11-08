@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div>
         <nav>
-            <div>
+            <div className="logo">
                <h1>AG Charts</h1>
             </div>
             <ul>
