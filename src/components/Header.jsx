@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-        <nav>
+        <nav className="navbar d-flex justify-content-between">
             <div className="logo">
                <h1>AG Charts</h1>
             </div>
