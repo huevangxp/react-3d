@@ -9,7 +9,7 @@ const Header = () => {
             </div>
            <div>
            <ul className="flex gap-5 font-semibold ">
-                <li className="hover:bg-white ">Home</li>
+                <li className="hover:bg-white hover:text-black ">Home</li>
                 <li>Products</li>
                 <li>Services</li>
                 <li>About</li>
