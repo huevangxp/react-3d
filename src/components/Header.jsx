@@ -9,7 +9,7 @@ const Header = () => {
             </div>
            <div>
            <ul className="flex gap-5 font-semibold ">
-                <li className="hover:bg-white hover:text-black p-5 ">Home</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 ">Home</li>
                 <li className="hover:bg-white hover:text-black ">Products</li>
                 <li className="hover:bg-white hover:text-black ">Services</li>
                 <li className="hover:bg-white hover:text-black ">About</li>
