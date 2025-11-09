@@ -10,10 +10,10 @@ const Header = () => {
            <div>
            <ul className="flex gap-5 font-semibold ">
                 <li className="hover:bg-white hover:text-black py-2 px-4 ">Home</li>
-                <li className="hover:bg-white hover:text-black ">Products</li>
-                <li className="hover:bg-white hover:text-black ">Services</li>
-                <li className="hover:bg-white hover:text-black ">About</li>
-                <li className="hover:bg-white hover:text-black ">Contact</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 ">Products</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 ">Services</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 ">About</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 ">Contact</li>
             </ul>
            </div>
         </nav>
