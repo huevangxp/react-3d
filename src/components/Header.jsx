@@ -10,8 +10,8 @@ const Header = () => {
             </div>
            <div>
            <ul className="flex gap-5 font-semibold ">
-                <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer " onClick={() => navigate('/home')}>Home</li>
-                <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer " onClick={() => navigate('/earth')}>Earth</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer " onClick={() => navigate('/pages/home')}>Home</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer " onClick={() => navigate('/pages/earth')}>Earth</li>
                 <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer ">Services</li>
                 <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer ">About</li>
                 <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer ">Contact</li>
