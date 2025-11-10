@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const Header = () => {
+    const navigate = useNavigate()
   return (
     <div>
         <nav className="navbar flex justify-between p-6 bg-black text-white mb-2 shadow-lg">
@@ -9,7 +10,7 @@ const Header = () => {
             </div>
            <div>
            <ul className="flex gap-5 font-semibold ">
-                <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer ">Home</li>
+                <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer " onClick={() => navigate('/home')}>Home</li>
                 <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer " onClick={() => navigate('/earth')}>Earth</li>
                 <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer ">Services</li>
                 <li className="hover:bg-white hover:text-black py-2 px-4 rounded-lg cursor-pointer ">About</li>
